@@ -1,24 +1,21 @@
-# Lab 2 - Landing page
+# Meditatii la Romana - Landing Page
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+A professional Romanian language and literature tutor offers structured private lessons designed to help students improve grammar, writing, and speaking skills, as well as achieve strong exam results. Lessons are available online (Zoom or Google Meet) or in person in Nisporeni.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+The landing page presents a comprehensive set of services designed to support students at different levels:
 
-## Customer requirements
+* Individual tutoring sessions (1-to-1), allowing time for questions and targeted clarification.
+* Structured revision plans, including weekly learning plans, tests, and detailed corrections.
+* Essay writing and argumentation training, focusing on structure, clarity, and effective expression.
+* Grammar and text analysis practice to strengthen core language skills.
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+## Screenshots
 
-## Dev requirements
+Below you can see a screenshot demo of the landing page application:
+![Demo screenshot](demo.png)
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+## Live demo
 
-## Other requirements:
-
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+You can visit and test the platform by clicking on the following link:
+<br>
+https://meditatii-romana.vercel.app/
