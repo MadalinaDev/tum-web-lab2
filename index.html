@@ -6,16 +6,57 @@
     <title>Meditatii la romana</title>
     <link rel="icon" type="image/png" href="mascot.png" />
     <link rel="stylesheet" href="reset.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false, container: false },
+        theme: {
+          screens: { sm: "480px", md: "768px", lg: "1024px" },
+          extend: {
+            colors: {
+              ink: { DEFAULT: "#111215", soft: "#2a2d33" },
+              paper: "#f6f1ea",
+              accent: { DEFAULT: "#d97a35", dark: "#a4541c" },
+              line: "#e5d7c8",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "Georgia", "serif"],
+              body: ['"Source Sans 3"', "Georgia", "serif"],
+            },
+            boxShadow: {
+              card: "0 18px 40px rgba(17, 18, 21, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#hero">
-          <span class="brand-mark">
-            <img src="mascot.png" alt="Mascota" />
+  <body
+    class="font-body text-ink min-h-screen bg-[radial-gradient(circle_at_top_left,_#fdf7ef_0%,_#f6f1ea_60%)]"
+  >
+    <header
+      class="sticky top-0 z-10 bg-[rgba(246,241,234,0.92)] backdrop-blur-[10px] border-b border-line"
+    >
+      <div class="container flex items-center gap-2 py-2 sm:py-5 md:gap-6">
+        <a
+          class="inline-flex items-center gap-2 sm:gap-3.5 text-inherit no-underline"
+          href="#hero"
+        >
+          <span
+            class="inline-flex items-center justify-center w-11 h-11 bg-[#fff1e4] rounded-xl p-1.5 shadow-card"
+          >
+            <img
+              class="w-full h-full object-contain"
+              src="mascot.png"
+              alt="Mascota"
+            />
           </span>
-          <span class="brand-text">Meditatii la Romana • Nisporeni</span>
+          <span
+            class="hidden sm:inline font-display font-semibold leading-tight text-sm md:text-lg"
+          >
+            Meditatii la Romana &bull; Nisporeni
+          </span>
         </a>
         <input
           class="mobile-menu-toggle-input"
@@ -41,68 +82,127 @@
     </header>
 
     <main>
-      <section id="hero" class="hero">
-        <div class="container hero-inner">
-          <div class="hero-content">
-            <span class="hero-badge"
-              >Profesor de limba si literatura romana</span
+      <section
+        id="hero"
+        class="pt-9 pb-12 sm:pt-12 sm:pb-[60px] md:pt-[72px] md:pb-[90px]"
+      >
+        <div
+          class="container grid grid-cols-1 gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 items-center"
+        >
+          <div>
+            <span
+              class="inline-flex items-center gap-2 py-[5px] px-2.5 sm:py-1.5 sm:px-3 rounded-full bg-[#fff1e4] text-accent-dark font-semibold text-[11px] sm:text-[13px] tracking-wide uppercase"
             >
-            <h1>
+              Profesor de limba si literatura romana
+            </span>
+            <h1
+              class="font-display text-[22px] leading-[1.2] mt-3 mb-3.5 sm:text-[28px] md:text-[42px] md:leading-[1.12] md:mt-4 md:mb-[18px]"
+            >
               Meditatii in Nisporeni, online si offline, pentru rezultate sigure
               la romana
             </h1>
-            <p>
+            <p
+              class="text-ink-soft text-base md:text-lg leading-relaxed max-w-[520px]"
+            >
               Pregatire clara si structurata pentru clasa a 9-a, Bac si lectii
               curente. Lucram pe texte, argumentare, gramatica si exprimare
               corecta, cu feedback personalizat dupa fiecare sedinta.
             </p>
-            <div class="hero-actions">
-              <a class="cta" href="#contact">Rezerva o sedinta</a>
-              <a class="ghost" href="#servicii">Vezi serviciile</a>
+            <div
+              class="flex flex-col gap-3 mt-5 mb-3.5 md:flex-row md:items-center md:gap-4 md:mt-[26px] md:mb-[18px]"
+            >
+              <a class="cta w-full text-center md:w-auto" href="#contact"
+                >Rezerva o sedinta</a
+              >
+              <a class="ghost w-full text-center md:w-auto" href="#servicii"
+                >Vezi serviciile</a
+              >
             </div>
-            <ul class="hero-highlights">
-              <li>Plan de lucru pe obiective si nivel</li>
-              <li>Corectare detaliata a eseurilor</li>
-              <li>Exercitii de dictie si expresivitate</li>
+            <ul class="hero-highlights list-none p-0 m-0 grid gap-2 sm:gap-2.5">
+              <li
+                class="pl-[18px] sm:pl-[22px] relative text-ink-soft text-sm sm:text-[15px] before:content-[''] before:absolute before:left-0 before:top-[7px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-accent before:shadow-[0_0_0_4px_rgba(217,122,53,0.18)]"
+              >
+                Plan de lucru pe obiective si nivel
+              </li>
+              <li
+                class="pl-[18px] sm:pl-[22px] relative text-ink-soft text-sm sm:text-[15px] before:content-[''] before:absolute before:left-0 before:top-[7px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-accent before:shadow-[0_0_0_4px_rgba(217,122,53,0.18)]"
+              >
+                Corectare detaliata a eseurilor
+              </li>
+              <li
+                class="pl-[18px] sm:pl-[22px] relative text-ink-soft text-sm sm:text-[15px] before:content-[''] before:absolute before:left-0 before:top-[7px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-accent before:shadow-[0_0_0_4px_rgba(217,122,53,0.18)]"
+              >
+                Exercitii de dictie si expresivitate
+              </li>
             </ul>
           </div>
-          <div class="hero-card">
-            <p class="hero-card-title">Format de lucru</p>
-            <div class="hero-card-row">
+          <div
+            class="bg-[#fffaf4] border border-line rounded-[14px] sm:rounded-[20px] p-4 sm:p-5 md:p-[26px] shadow-card"
+          >
+            <p class="font-display text-base sm:text-lg mb-3.5">
+              Format de lucru
+            </p>
+            <div
+              class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+            >
               <span>Online</span>
               <span>Zoom / Meet</span>
             </div>
-            <div class="hero-card-row">
+            <div
+              class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+            >
               <span>Offline</span>
               <span>Nisporeni</span>
             </div>
-            <div class="hero-card-divider"></div>
-            <p class="hero-card-title">Pentru cine</p>
-            <div class="hero-card-row">
+            <div class="h-px bg-line my-[18px]"></div>
+            <p class="font-display text-base sm:text-lg mb-3.5">Pentru cine</p>
+            <div
+              class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+            >
               <span>Clasa a 9-a</span>
               <span>Evaluare nationala</span>
             </div>
-            <div class="hero-card-row">
+            <div
+              class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+            >
               <span>Clasa a 12-a</span>
               <span>Bacalaureat</span>
             </div>
-            <div class="hero-card-row">
+            <div
+              class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+            >
               <span>Lectii</span>
               <span>Consolidare</span>
             </div>
-            <a class="hero-card-link" href="#contact">Solicita detalii</a>
+            <a
+              class="inline-flex mt-4 font-semibold text-accent-dark no-underline"
+              href="#contact"
+              >Solicita detalii</a
+            >
           </div>
         </div>
       </section>
 
-      <section id="despre" class="section about">
-        <div class="container about-inner">
+      <section
+        id="despre"
+        class="bg-[#fff9f2] border-y border-line py-9 sm:py-12 md:py-[78px]"
+      >
+        <div
+          class="container grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start"
+        >
           <div>
-            <span class="section-kicker">Despre</span>
-            <h2 class="section-title">
+            <span
+              class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+              >Despre</span
+            >
+            <h2
+              class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+            >
               Lucram cu rabdare, claritate si obiective masurabile
             </h2>
-            <p class="section-lead">
+            <p
+              class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+            >
               Sunt profesor de limba si literatura romana, cu focus pe
               comunicare corecta, argumentare si intelegerea profunda a
               textelor. Meditatiile sunt practice si orientate spre rezultate,
@@ -110,9 +210,13 @@
               scrii corect.
             </p>
           </div>
-          <div class="about-card">
-            <h3>Ce primesti in fiecare sedinta</h3>
-            <ul>
+          <div
+            class="bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-6 shadow-card"
+          >
+            <h3 class="mb-2 sm:mb-3 text-base sm:text-xl">
+              Ce primesti in fiecare sedinta
+            </h3>
+            <ul class="pl-[18px] text-ink-soft leading-[1.7]">
               <li>Explicatii simple, pe intelesul tau</li>
               <li>Corectare si rescriere ghidata a eseurilor</li>
               <li>Teme personalizate si plan de invatare</li>
@@ -122,28 +226,45 @@
         </div>
       </section>
 
-      <section id="servicii" class="section services">
+      <section id="servicii" class="py-9 sm:py-12 md:py-[78px]">
         <div class="container">
-          <span class="section-kicker">Servicii</span>
-          <h2 class="section-title">Totul intr-un singur loc</h2>
-          <div class="service-grid">
-            <article class="service-card">
-              <h3>Meditatii individuale</h3>
-              <p>
+          <span
+            class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+            >Servicii</span
+          >
+          <h2 class="font-display text-xl sm:text-[26px] md:text-[34px] mb-6">
+            Totul intr-un singur loc
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px]">
+            <article
+              class="bg-[#fffaf4] border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card"
+            >
+              <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">
+                Meditatii individuale
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Sedinte 1:1, online sau in Nisporeni. Avem timp pentru intrebari
                 si pentru clarificari punctuale.
               </p>
             </article>
-            <article class="service-card">
-              <h3>Plan de recapitulare</h3>
-              <p>
+            <article
+              class="bg-[#fffaf4] border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card"
+            >
+              <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">
+                Plan de recapitulare
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Structuram materia pe saptamani, cu testari periodice si teme
                 corectate detaliat.
               </p>
             </article>
-            <article class="service-card">
-              <h3>Eseu si argumentare</h3>
-              <p>
+            <article
+              class="bg-[#fffaf4] border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card"
+            >
+              <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">
+                Eseu si argumentare
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Invatam structura eseului, tehnici de argumentare si exprimare
                 clara, cu exemple reale.
               </p>
@@ -152,29 +273,43 @@
         </div>
       </section>
 
-      <section id="pregatire" class="section exam">
+      <section
+        id="pregatire"
+        class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+      >
         <div class="container">
-          <span class="section-kicker">Pregatire examene</span>
-          <h2 class="section-title">Clasa a 9-a si Bacalaureat</h2>
-          <div class="exam-grid">
-            <article class="exam-card">
-              <h3>Clasa a 9-a</h3>
-              <p>
+          <span
+            class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+            >Pregatire examene</span
+          >
+          <h2
+            class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+          >
+            Clasa a 9-a si Bacalaureat
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[26px]">
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-6 shadow-card"
+            >
+              <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">Clasa a 9-a</h3>
+              <p class="mb-3.5 text-ink-soft leading-relaxed">
                 Recapitulare gramatica, texte literare, analiza si exercitii tip
                 evaluare. Te ajut sa intelegi cerintele si sa raspunzi clar.
               </p>
-              <ul>
+              <ul class="pl-[18px] text-ink-soft leading-[1.7]">
                 <li>Teste simulative si corectare pe loc</li>
                 <li>Scheme rapide pentru subiecte</li>
               </ul>
             </article>
-            <article class="exam-card">
-              <h3>Bacalaureat</h3>
-              <p>
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-6 shadow-card"
+            >
+              <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">Bacalaureat</h3>
+              <p class="mb-3.5 text-ink-soft leading-relaxed">
                 Plan complet pentru subiectele de Bac, cu accent pe eseu,
                 argumentare si interpretare de text.
               </p>
-              <ul>
+              <ul class="pl-[18px] text-ink-soft leading-[1.7]">
                 <li>Eseuri model si rescrieri ghidate</li>
                 <li>Metode rapide de invatare</li>
               </ul>
@@ -183,59 +318,101 @@
         </div>
       </section>
 
-      <section id="dictie" class="section diction">
-        <div class="container diction-inner">
+      <section id="dictie" class="py-9 sm:py-12 md:py-[78px]">
+        <div
+          class="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9"
+        >
           <div>
-            <span class="section-kicker">Dictie</span>
-            <h2 class="section-title">Vorbeste clar, sigur si expresiv</h2>
-            <p class="section-lead">
+            <span
+              class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+              >Dictie</span
+            >
+            <h2
+              class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+            >
+              Vorbeste clar, sigur si expresiv
+            </h2>
+            <p
+              class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+            >
               Cursurile de dictie te ajuta sa iti imbunatatesti pronuntia,
               ritmul si increderea in exprimare. Lucram pe respiratie, accent,
               articulare si intonatie.
             </p>
           </div>
-          <div class="diction-steps">
-            <div class="diction-step">
-              <span>01</span>
+          <div class="grid gap-4">
+            <div
+              class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-3 md:gap-4 items-start p-3.5 md:p-[18px] rounded-2xl bg-[#fffaf4] border border-line shadow-card"
+            >
+              <span class="font-display text-xl md:text-2xl text-accent-dark"
+                >01</span
+              >
               <div>
-                <h3>Evaluare rapida</h3>
-                <p>
+                <h3 class="mb-1.5 text-lg">Evaluare rapida</h3>
+                <p class="text-ink-soft leading-normal">
                   Identificam sunetele si obiceiurile care iti afecteaza
                   claritatea.
                 </p>
               </div>
             </div>
-            <div class="diction-step">
-              <span>02</span>
+            <div
+              class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-3 md:gap-4 items-start p-3.5 md:p-[18px] rounded-2xl bg-[#fffaf4] border border-line shadow-card"
+            >
+              <span class="font-display text-xl md:text-2xl text-accent-dark"
+                >02</span
+              >
               <div>
-                <h3>Exercitii ghidate</h3>
-                <p>Lucram cu texte scurte, fraze si jocuri de articulare.</p>
+                <h3 class="mb-1.5 text-lg">Exercitii ghidate</h3>
+                <p class="text-ink-soft leading-normal">
+                  Lucram cu texte scurte, fraze si jocuri de articulare.
+                </p>
               </div>
             </div>
-            <div class="diction-step">
-              <span>03</span>
+            <div
+              class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-3 md:gap-4 items-start p-3.5 md:p-[18px] rounded-2xl bg-[#fffaf4] border border-line shadow-card"
+            >
+              <span class="font-display text-xl md:text-2xl text-accent-dark"
+                >03</span
+              >
               <div>
-                <h3>Aplicare practica</h3>
-                <p>Simulam prezentari si raspunsuri, cu feedback instant.</p>
+                <h3 class="mb-1.5 text-lg">Aplicare practica</h3>
+                <p class="text-ink-soft leading-normal">
+                  Simulam prezentari si raspunsuri, cu feedback instant.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="testimoniale" class="section testimonials">
+      <section
+        id="testimoniale"
+        class="bg-[#fff9f2] border-y border-line py-9 sm:py-12 md:py-[78px]"
+      >
         <div class="container">
-          <span class="section-kicker">Testimoniale</span>
-          <h2 class="section-title">Rezultate si incredere de la elevi</h2>
-          <div class="testimonial-grid">
-            <article class="testimonial-card">
-              <div class="testimonial-header">
+          <span
+            class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+            >Testimoniale</span
+          >
+          <h2
+            class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+          >
+            Rezultate si incredere de la elevi
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px] mt-6">
+            <article
+              class="testimonial-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card relative before:content-['\201C'] before:absolute before:-top-[18px] before:left-4 before:font-display before:text-[52px] before:text-[rgba(217,122,53,0.22)]"
+            >
+              <div class="flex items-center gap-3.5 mb-3.5">
                 <img
-                  class="testimonial-avatar"
+                  class="w-14 h-14 rounded-full border-2 border-[#fff1e4] object-cover shadow-[0_10px_20px_rgba(17,18,21,0.12)]"
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80"
                   alt="Portret elev"
                 />
-                <div class="testimonial-rating" aria-label="Evaluare 5 din 5">
+                <div
+                  class="testimonial-rating flex items-center gap-1.5 text-[#e0a135]"
+                  aria-label="Evaluare 5 din 5"
+                >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M12 2.5l2.94 5.95 6.56.95-4.75 4.63 1.12 6.53L12 17.77l-5.87 3.09 1.12-6.53L2.5 9.4l6.56-.95L12 2.5z"
@@ -263,24 +440,29 @@
                   </svg>
                 </div>
               </div>
-              <p class="testimonial-quote">
+              <p class="mb-[18px] text-ink-soft leading-relaxed">
                 Am inceput pregatirea pentru Bac cu emotii, dar fiecare sedinta
                 a fost clara si pe obiectiv. Am reusit sa structurez eseurile si
                 sa imi cresc nota.
               </p>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Irina M.</span>
-                <span class="testimonial-detail">Clasa a 12-a, Bac</span>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-semibold">Irina M.</span>
+                <span class="text-sm text-ink-soft">Clasa a 12-a, Bac</span>
               </div>
             </article>
-            <article class="testimonial-card">
-              <div class="testimonial-header">
+            <article
+              class="testimonial-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card relative before:content-['\201C'] before:absolute before:-top-[18px] before:left-4 before:font-display before:text-[52px] before:text-[rgba(217,122,53,0.22)]"
+            >
+              <div class="flex items-center gap-3.5 mb-3.5">
                 <img
-                  class="testimonial-avatar"
+                  class="w-14 h-14 rounded-full border-2 border-[#fff1e4] object-cover shadow-[0_10px_20px_rgba(17,18,21,0.12)]"
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80"
                   alt="Portret elev"
                 />
-                <div class="testimonial-rating" aria-label="Evaluare 5 din 5">
+                <div
+                  class="testimonial-rating flex items-center gap-1.5 text-[#e0a135]"
+                  aria-label="Evaluare 5 din 5"
+                >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M12 2.5l2.94 5.95 6.56.95-4.75 4.63 1.12 6.53L12 17.77l-5.87 3.09 1.12-6.53L2.5 9.4l6.56-.95L12 2.5z"
@@ -308,24 +490,29 @@
                   </svg>
                 </div>
               </div>
-              <p class="testimonial-quote">
+              <p class="mb-[18px] text-ink-soft leading-relaxed">
                 Exercitiile de dictie m-au ajutat sa vorbesc mai clar si sa am
                 incredere la prezentari. Feedbackul a fost exact ce aveam
                 nevoie.
               </p>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Andrei P.</span>
-                <span class="testimonial-detail">Curs dictie</span>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-semibold">Andrei P.</span>
+                <span class="text-sm text-ink-soft">Curs dictie</span>
               </div>
             </article>
-            <article class="testimonial-card">
-              <div class="testimonial-header">
+            <article
+              class="testimonial-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card relative before:content-['\201C'] before:absolute before:-top-[18px] before:left-4 before:font-display before:text-[52px] before:text-[rgba(217,122,53,0.22)]"
+            >
+              <div class="flex items-center gap-3.5 mb-3.5">
                 <img
-                  class="testimonial-avatar"
+                  class="w-14 h-14 rounded-full border-2 border-[#fff1e4] object-cover shadow-[0_10px_20px_rgba(17,18,21,0.12)]"
                   src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=160&h=160&q=80"
                   alt="Portret elev"
                 />
-                <div class="testimonial-rating" aria-label="Evaluare 5 din 5">
+                <div
+                  class="testimonial-rating flex items-center gap-1.5 text-[#e0a135]"
+                  aria-label="Evaluare 5 din 5"
+                >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M12 2.5l2.94 5.95 6.56.95-4.75 4.63 1.12 6.53L12 17.77l-5.87 3.09 1.12-6.53L2.5 9.4l6.56-.95L12 2.5z"
@@ -353,56 +540,96 @@
                   </svg>
                 </div>
               </div>
-              <p class="testimonial-quote">
+              <p class="mb-[18px] text-ink-soft leading-relaxed">
                 Pregatirea pentru clasa a 9-a a fost organizata pe saptamani, cu
                 teste si corectari. Am inteles gramatica mult mai bine.
               </p>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Daria C.</span>
-                <span class="testimonial-detail">Clasa a 9-a</span>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-semibold">Daria C.</span>
+                <span class="text-sm text-ink-soft">Clasa a 9-a</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="tarife" class="section prices">
+      <section
+        id="tarife"
+        class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+      >
         <div class="container">
-          <span class="section-kicker">Tarife</span>
-          <h2 class="section-title">Pachete simple si transparente</h2>
-          <p class="section-lead">
+          <span
+            class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+            >Tarife</span
+          >
+          <h2
+            class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+          >
+            Pachete simple si transparente
+          </h2>
+          <p
+            class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px] mb-7"
+          >
             Alege formatul care ti se potriveste. Sedintele pot fi online sau
             offline in Nisporeni.
           </p>
-          <div class="price-grid">
-            <article class="price-card">
-              <h3>Sedinta individuala</h3>
-              <p class="price-value">150 MDL</p>
-              <p class="price-note">60 minute, online sau offline</p>
-              <ul>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px]">
+            <article
+              class="price-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-5 md:p-[26px] shadow-card relative grid gap-3"
+            >
+              <h3 class="text-base sm:text-xl">Sedinta individuala</h3>
+              <p
+                class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
+              >
+                150 MDL
+              </p>
+              <p class="text-ink-soft text-[13px] sm:text-[15px]">
+                60 minute, online sau offline
+              </p>
+              <ul class="pl-[18px] text-ink-soft leading-[1.7]">
                 <li>Analiza nivelului curent</li>
                 <li>Exercitii personalizate</li>
                 <li>Feedback imediat</li>
               </ul>
               <a class="ghost" href="#contact">Rezerva</a>
             </article>
-            <article class="price-card featured">
-              <div class="price-badge">Recomandat</div>
-              <h3>Pachet 4 sedinte</h3>
-              <p class="price-value">520 MDL</p>
-              <p class="price-note">4 x 60 minute, economisesti timp</p>
-              <ul>
+            <article
+              class="price-card bg-[#fffaf3] border border-[rgba(217,122,53,0.45)] rounded-xl sm:rounded-[18px] p-3.5 sm:p-5 md:p-[26px] shadow-card relative grid gap-3"
+            >
+              <div
+                class="absolute top-[18px] right-[18px] bg-[#fbe2cc] text-accent-dark py-1.5 px-2.5 rounded-full text-xs font-semibold uppercase tracking-wide"
+              >
+                Recomandat
+              </div>
+              <h3 class="text-base sm:text-xl">Pachet 4 sedinte</h3>
+              <p
+                class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
+              >
+                520 MDL
+              </p>
+              <p class="text-ink-soft text-[13px] sm:text-[15px]">
+                4 x 60 minute, economisesti timp
+              </p>
+              <ul class="pl-[18px] text-ink-soft leading-[1.7]">
                 <li>Plan de invatare saptamanal</li>
                 <li>Corectare eseu inclusa</li>
                 <li>Suport intre sedinte</li>
               </ul>
               <a class="cta" href="#contact">Rezerva pachet</a>
             </article>
-            <article class="price-card">
-              <h3>Pachet examen</h3>
-              <p class="price-value">980 MDL</p>
-              <p class="price-note">8 sedinte pentru examen</p>
-              <ul>
+            <article
+              class="price-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-5 md:p-[26px] shadow-card relative grid gap-3"
+            >
+              <h3 class="text-base sm:text-xl">Pachet examen</h3>
+              <p
+                class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
+              >
+                980 MDL
+              </p>
+              <p class="text-ink-soft text-[13px] sm:text-[15px]">
+                8 sedinte pentru examen
+              </p>
+              <ul class="pl-[18px] text-ink-soft leading-[1.7]">
                 <li>Simulari cu barem</li>
                 <li>Eseuri model si rescrieri</li>
                 <li>Strategii de timp</li>
@@ -413,41 +640,69 @@
         </div>
       </section>
 
-      <section id="faq" class="section faq">
-        <div class="container faq-inner">
+      <section
+        id="faq"
+        class="bg-[#fff9f2] border-t border-line py-9 sm:py-12 md:py-[78px]"
+      >
+        <div
+          class="container grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-7 lg:gap-10 items-start"
+        >
           <div>
-            <span class="section-kicker">FAQ</span>
-            <h2 class="section-title">Intrebari frecvente</h2>
-            <p class="section-lead">
+            <span
+              class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+              >FAQ</span
+            >
+            <h2
+              class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+            >
+              Intrebari frecvente
+            </h2>
+            <p
+              class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+            >
               Raspunsuri clare pentru cele mai comune intrebari despre sedinte,
               programari si pregatire.
             </p>
           </div>
-          <div class="faq-list">
-            <article class="faq-item">
-              <h3>Cat dureaza o sedinta?</h3>
-              <p>
+          <div class="grid gap-3 md:gap-4">
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-2xl p-3.5 sm:px-[18px] sm:py-4 md:px-[22px] md:py-5 shadow-card"
+            >
+              <h3 class="mb-2 text-base md:text-lg">Cat dureaza o sedinta?</h3>
+              <p class="text-ink-soft leading-relaxed">
                 O sedinta standard dureaza 60 de minute, cu pauze scurte daca
                 este nevoie. Pentru pachete se poate ajusta durata.
               </p>
             </article>
-            <article class="faq-item">
-              <h3>Se poate face pregatire doar online?</h3>
-              <p>
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-2xl p-3.5 sm:px-[18px] sm:py-4 md:px-[22px] md:py-5 shadow-card"
+            >
+              <h3 class="mb-2 text-base md:text-lg">
+                Se poate face pregatire doar online?
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Da. Lucram online prin Zoom sau Google Meet, cu materiale
                 partajate si explicatii in timp real.
               </p>
             </article>
-            <article class="faq-item">
-              <h3>Ce materiale trebuie sa aduc?</h3>
-              <p>
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-2xl p-3.5 sm:px-[18px] sm:py-4 md:px-[22px] md:py-5 shadow-card"
+            >
+              <h3 class="mb-2 text-base md:text-lg">
+                Ce materiale trebuie sa aduc?
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Pentru inceput este suficient caietul si manualul. Eu ofer
                 teste, modele de eseu si fise de lucru.
               </p>
             </article>
-            <article class="faq-item">
-              <h3>Cum se face programarea?</h3>
-              <p>
+            <article
+              class="bg-white border border-line rounded-xl sm:rounded-2xl p-3.5 sm:px-[18px] sm:py-4 md:px-[22px] md:py-5 shadow-card"
+            >
+              <h3 class="mb-2 text-base md:text-lg">
+                Cum se face programarea?
+              </h3>
+              <p class="text-ink-soft leading-relaxed">
                 Programarea se face prin mesaj sau apel. Stabilim ziua, ora si
                 formatul, apoi primesti confirmarea.
               </p>
@@ -456,48 +711,95 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact">
-        <div class="container contact-inner">
+      <section
+        id="contact"
+        class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+      >
+        <div
+          class="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9 items-start"
+        >
           <div>
-            <span class="section-kicker">Contact</span>
-            <h2 class="section-title">Programeaza o sedinta</h2>
-            <p class="section-lead">
+            <span
+              class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+              >Contact</span
+            >
+            <h2
+              class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+            >
+              Programeaza o sedinta
+            </h2>
+            <p
+              class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+            >
               Scrie-mi pentru a stabili un program potrivit. Raspund rapid si te
               ajut sa alegi formatul potrivit: online sau offline in Nisporeni.
             </p>
-            <div class="contact-details">
+            <div class="grid gap-4 mt-6">
               <div>
-                <p class="contact-label">Telefon / WhatsApp</p>
-                <p class="contact-value">+373 600 00 000</p>
+                <p
+                  class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+                >
+                  Telefon / WhatsApp
+                </p>
+                <p class="text-base sm:text-lg text-ink-soft">
+                  +373 600 00 000
+                </p>
               </div>
               <div>
-                <p class="contact-label">Email</p>
-                <p class="contact-value">meditatii.romana@email.com</p>
+                <p
+                  class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+                >
+                  Email
+                </p>
+                <p class="text-base sm:text-lg text-ink-soft">
+                  meditatii.romana@email.com
+                </p>
               </div>
               <div>
-                <p class="contact-label">Locatie</p>
-                <p class="contact-value">Nisporeni, Republica Moldova</p>
+                <p
+                  class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+                >
+                  Locatie
+                </p>
+                <p class="text-base sm:text-lg text-ink-soft">
+                  Nisporeni, Republica Moldova
+                </p>
               </div>
             </div>
           </div>
-          <form class="contact-form">
-            <label>
+          <form
+            class="bg-white border border-line rounded-[18px] p-6 shadow-card grid gap-3 md:gap-4"
+          >
+            <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
               Nume si prenume
-              <input type="text" name="name" placeholder="Numele tau" />
+              <input
+                class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
+                type="text"
+                name="name"
+                placeholder="Numele tau"
+              />
             </label>
-            <label>
+            <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
               Telefon
-              <input type="tel" name="phone" placeholder="Numar de telefon" />
+              <input
+                class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
+                type="tel"
+                name="phone"
+                placeholder="Numar de telefon"
+              />
             </label>
-            <label>
+            <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
               Mesaj
               <textarea
+                class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] resize-y"
                 name="message"
                 rows="5"
                 placeholder="Spune-mi ce obiectiv ai"
               ></textarea>
             </label>
-            <button class="cta" type="submit">Trimite mesaj</button>
+            <button class="cta border-0 cursor-pointer" type="submit">
+              Trimite mesaj
+            </button>
           </form>
         </div>
       </section>
@@ -505,34 +807,68 @@
 
     <div class="mascot" aria-live="polite">
       <img src="mascot.png" alt="Mascota prietenoasa pentru lectii" />
-      <span class="mascot-bubble"
-        >Bine ai venit! Rezerva o sedinta si hai sa lucram impreuna.</span
-      >
+      <span class="mascot-bubble">
+        Bine ai venit! Rezerva o sedinta si hai sa lucram impreuna.
+      </span>
     </div>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
+    <footer class="bg-[#1b1b1d] text-[#f5efe6] pt-12">
+      <div
+        class="container grid grid-cols-1 lg:grid-cols-[1.2fr_0.6fr_0.8fr] gap-6 lg:gap-8 pb-8 border-b border-[rgba(245,239,230,0.2)]"
+      >
         <div>
-          <p class="footer-brand">Meditatii la Romana</p>
-          <p class="footer-note">
+          <p class="font-display text-lg sm:text-xl mb-2.5">
+            Meditatii la Romana
+          </p>
+          <p
+            class="mb-2 text-sm sm:text-base text-[rgba(245,239,230,0.72)] leading-relaxed"
+          >
             Pregatire pentru clasa a 9-a, Bac si lectii curente. Online si
             offline in Nisporeni.
           </p>
         </div>
-        <div class="footer-links">
-          <a href="#despre">Despre</a>
-          <a href="#servicii">Servicii</a>
-          <a href="#tarife">Tarife</a>
-          <a href="#faq">FAQ</a>
+        <div class="grid gap-2">
+          <a
+            class="text-[#f5efe6] no-underline hover:text-[#f0c59b]"
+            href="#despre"
+            >Despre</a
+          >
+          <a
+            class="text-[#f5efe6] no-underline hover:text-[#f0c59b]"
+            href="#servicii"
+            >Servicii</a
+          >
+          <a
+            class="text-[#f5efe6] no-underline hover:text-[#f0c59b]"
+            href="#tarife"
+            >Tarife</a
+          >
+          <a
+            class="text-[#f5efe6] no-underline hover:text-[#f0c59b]"
+            href="#faq"
+            >FAQ</a
+          >
         </div>
         <div>
-          <p class="footer-label">Contact</p>
-          <p class="footer-note">+373 600 00 000</p>
-          <p class="footer-note">meditatii.romana@email.com</p>
+          <p
+            class="uppercase text-xs tracking-wide text-[rgba(245,239,230,0.6)] mb-2"
+          >
+            Contact
+          </p>
+          <p
+            class="mb-2 text-sm sm:text-base text-[rgba(245,239,230,0.72)] leading-relaxed"
+          >
+            +373 600 00 000
+          </p>
+          <p
+            class="mb-2 text-sm sm:text-base text-[rgba(245,239,230,0.72)] leading-relaxed"
+          >
+            meditatii.romana@email.com
+          </p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Meditatii la Romana. Toate drepturile rezervate.</p>
+      <div class="text-center py-4 pb-6 text-[rgba(245,239,230,0.5)] text-sm">
+        <p>&copy; 2026 Meditatii la Romana. Toate drepturile rezervate.</p>
       </div>
     </footer>
   </body>
