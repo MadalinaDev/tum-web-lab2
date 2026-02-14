@@ -575,3 +575,39 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
+
+.faq {
+  background: #fff9f2;
+  border-top: 1px solid var(--line);
+}
+
+.faq-inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
