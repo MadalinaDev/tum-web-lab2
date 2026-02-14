@@ -499,3 +499,79 @@ body {
   font-size: 14px;
   color: var(--ink-soft);
 }
+
+.prices {
+  background: #fff4e8;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.prices .section-lead {
+  margin-bottom: 28px;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.price-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  position: relative;
+  display: grid;
+  gap: 12px;
+}
+
+.price-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.price-value {
+  margin: 0;
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 32px;
+  color: var(--accent-dark);
+}
+
+.price-note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.price-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.price-card .cta,
+.price-card .ghost {
+  justify-self: start;
+}
+
+.price-card.featured {
+  border-color: rgba(217, 122, 53, 0.45);
+  background: #fffaf3;
+}
+
+.price-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #fbe2cc;
+  color: var(--accent-dark);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
