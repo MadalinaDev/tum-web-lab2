@@ -249,3 +249,171 @@ body {
   color: var(--accent-dark);
   text-decoration: none;
 }
+
+.section {
+  padding: 78px 0;
+}
+
+.section-kicker {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 34px;
+  margin: 0 0 14px;
+}
+
+.section-lead {
+  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0;
+}
+
+.about {
+  background: #fff9f2;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.about-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.about-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.services .section-title {
+  margin-bottom: 24px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: #fffaf4;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.exam {
+  background: #fff4e8;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.exam-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.exam-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.exam-card p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.exam-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.diction-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+}
+
+.diction-steps {
+  display: grid;
+  gap: 16px;
+}
+
+.diction-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
+  border-radius: 16px;
+  background: #fffaf4;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.diction-step span {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 24px;
+  color: var(--accent-dark);
+}
+
+.diction-step h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.diction-step p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
