@@ -611,3 +611,128 @@ body {
   color: var(--ink-soft);
   line-height: 1.6;
 }
+
+.contact {
+  background: #fff4e8;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.contact-details {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact-label {
+  margin: 0 0 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.contact-value {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+.contact-form {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  background: #fffaf4;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .cta {
+  border: none;
+  cursor: pointer;
+}
+
+.site-footer {
+  background: #1b1b1d;
+  color: #f5efe6;
+  padding: 48px 0 0;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 0.8fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(245, 239, 230, 0.2);
+}
+
+.footer-brand {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.footer-note {
+  margin: 0 0 8px;
+  color: rgba(245, 239, 230, 0.72);
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: #f5efe6;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #f0c59b;
+}
+
+.footer-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: rgba(245, 239, 230, 0.6);
+  margin: 0 0 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 16px 0 24px;
+  color: rgba(245, 239, 230, 0.5);
+  font-size: 14px;
+}
