@@ -155,7 +155,7 @@
 }
 .mascot-bubble {
   max-width: 220px;
-  padding: 8px 6px;
+  padding: 10px;
   border-radius: 14px;
   background: #fffaf4;
   border: 1px solid var(--line);
