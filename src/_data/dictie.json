@@ -1,0 +1,21 @@
+{
+    "heading": "Vorbeste clar, sigur si expresiv",
+    "description": "Cursurile de dictie te ajuta sa iti imbunatatesti pronuntia, ritmul si increderea in exprimare. Lucram pe respiratie, accent, articulare si intonatie.",
+    "steps": [
+        {
+            "number": "01",
+            "title": "Evaluare rapida",
+            "description": "Identificam sunetele si obiceiurile care iti afecteaza claritatea."
+        },
+        {
+            "number": "02",
+            "title": "Exercitii ghidate",
+            "description": "Lucram cu texte scurte, fraze si jocuri de articulare."
+        },
+        {
+            "number": "03",
+            "title": "Aplicare practica",
+            "description": "Simulam prezentari si raspunsuri, cu feedback instant."
+        }
+    ]
+}

@@ -1,0 +1,459 @@
+---
+layout: base.njk
+---
+
+{# ── Hero ── #}
+<section
+  id="hero"
+  class="pt-9 pb-12 sm:pt-12 sm:pb-[60px] md:pt-[72px] md:pb-[90px]"
+>
+  <div
+    class="container grid grid-cols-1 gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 items-center"
+  >
+    <div>
+      <span
+        class="inline-flex items-center gap-2 py-[5px] px-2.5 sm:py-1.5 sm:px-3 rounded-full bg-[#fff1e4] text-accent-dark font-semibold text-[11px] sm:text-[13px] tracking-wide uppercase"
+      >
+        {{ hero.badge }}
+      </span>
+      <h1
+        class="font-display text-[22px] leading-[1.2] mt-3 mb-3.5 sm:text-[28px] md:text-[42px] md:leading-[1.12] md:mt-4 md:mb-[18px]"
+      >
+        {{ hero.heading }}
+      </h1>
+      <p
+        class="text-ink-soft text-base md:text-lg leading-relaxed max-w-[520px]"
+      >
+        {{ hero.description }}
+      </p>
+      <div
+        class="flex flex-col gap-3 mt-5 mb-3.5 md:flex-row md:items-center md:gap-4 md:mt-[26px] md:mb-[18px]"
+      >
+        <a class="cta w-full text-center md:w-auto" href="#contact"
+          >{{ hero.ctaPrimary }}</a
+        >
+        <a class="ghost w-full text-center md:w-auto" href="#servicii"
+          >{{ hero.ctaSecondary }}</a
+        >
+      </div>
+      <ul class="hero-highlights list-none p-0 m-0 grid gap-2 sm:gap-2.5">
+        {% for item in hero.highlights %}
+        <li
+          class="pl-[18px] sm:pl-[22px] relative text-ink-soft text-sm sm:text-[15px] before:content-[''] before:absolute before:left-0 before:top-[7px] before:w-2.5 before:h-2.5 before:rounded-full before:bg-accent before:shadow-[0_0_0_4px_rgba(217,122,53,0.18)]"
+        >
+          {{ item }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div
+      class="bg-[#fffaf4] border border-line rounded-[14px] sm:rounded-[20px] p-4 sm:p-5 md:p-[26px] shadow-card"
+    >
+      <p class="font-display text-base sm:text-lg mb-3.5">
+        {{ hero.card.formatTitle }}
+      </p>
+      {% for fmt in hero.card.formats %}
+      <div
+        class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+      >
+        <span>{{ fmt.label }}</span>
+        <span>{{ fmt.value }}</span>
+      </div>
+      {% endfor %}
+      <div class="h-px bg-line my-[18px]"></div>
+      <p class="font-display text-base sm:text-lg mb-3.5">{{ hero.card.audienceTitle }}</p>
+      {% for aud in hero.card.audiences %}
+      <div
+        class="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+      >
+        <span>{{ aud.label }}</span>
+        <span>{{ aud.value }}</span>
+      </div>
+      {% endfor %}
+      <a
+        class="inline-flex mt-4 font-semibold text-accent-dark no-underline"
+        href="#contact"
+        >{{ hero.card.cardCta }}</a
+      >
+    </div>
+  </div>
+</section>
+
+{# ── Despre ── #}
+<section
+  id="despre"
+  class="bg-[#fff9f2] border-y border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start"
+  >
+    <div>
+      <span
+        class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+        >Despre</span
+      >
+      <h2
+        class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+      >
+        {{ despre.heading }}
+      </h2>
+      <p
+        class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+      >
+        {{ despre.description }}
+      </p>
+    </div>
+    <div
+      class="bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-6 shadow-card"
+    >
+      <h3 class="mb-2 sm:mb-3 text-base sm:text-xl">
+        {{ despre.cardTitle }}
+      </h3>
+      <ul class="pl-[18px] text-ink-soft leading-[1.7]">
+        {% for item in despre.cardItems %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ── Servicii ── #}
+<section id="servicii" class="py-9 sm:py-12 md:py-[78px]">
+  <div class="container">
+    <span
+      class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+      >Servicii</span
+    >
+    <h2 class="font-display text-xl sm:text-[26px] md:text-[34px] mb-6">
+      {{ servicii.heading }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px]">
+      {% for svc in servicii.items %}
+      <article
+        class="bg-[#fffaf4] border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card"
+      >
+        <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">
+          {{ svc.title }}
+        </h3>
+        <p class="text-ink-soft leading-relaxed">
+          {{ svc.description }}
+        </p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── Pregatire examene ── #}
+<section
+  id="pregatire"
+  class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div class="container">
+    <span
+      class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+      >Pregatire examene</span
+    >
+    <h2
+      class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+    >
+      {{ pregatire.heading }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[26px]">
+      {% for item in pregatire.items %}
+      <article
+        class="bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-6 shadow-card"
+      >
+        <h3 class="mb-2 sm:mb-2.5 text-base sm:text-xl">{{ item.title }}</h3>
+        <p class="mb-3.5 text-ink-soft leading-relaxed">
+          {{ item.description }}
+        </p>
+        <ul class="pl-[18px] text-ink-soft leading-[1.7]">
+          {% for feat in item.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── Dictie ── #}
+<section id="dictie" class="py-9 sm:py-12 md:py-[78px]">
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9"
+  >
+    <div>
+      <span
+        class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+        >Dictie</span
+      >
+      <h2
+        class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+      >
+        {{ dictie.heading }}
+      </h2>
+      <p
+        class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+      >
+        {{ dictie.description }}
+      </p>
+    </div>
+    <div class="grid gap-4">
+      {% for step in dictie.steps %}
+      <div
+        class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-3 md:gap-4 items-start p-3.5 md:p-[18px] rounded-2xl bg-[#fffaf4] border border-line shadow-card"
+      >
+        <span class="font-display text-xl md:text-2xl text-accent-dark"
+          >{{ step.number }}</span
+        >
+        <div>
+          <h3 class="mb-1.5 text-lg">{{ step.title }}</h3>
+          <p class="text-ink-soft leading-normal">
+            {{ step.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── Testimoniale ── #}
+<section
+  id="testimoniale"
+  class="bg-[#fff9f2] border-y border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div class="container">
+    <span
+      class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+      >Testimoniale</span
+    >
+    <h2
+      class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+    >
+      {{ testimoniale.heading }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px] mt-6">
+      {% for t in testimoniale.items %}
+      <article
+        class="testimonial-card bg-white border border-line rounded-xl sm:rounded-[18px] p-3.5 sm:p-[18px] md:p-[22px] shadow-card relative before:content-['\201C'] before:absolute before:-top-[18px] before:left-4 before:font-display before:text-[52px] before:text-[rgba(217,122,53,0.22)]"
+      >
+        <div class="flex items-center gap-3.5 mb-3.5">
+          <img
+            class="w-14 h-14 rounded-full border-2 border-[#fff1e4] object-cover shadow-[0_10px_20px_rgba(17,18,21,0.12)]"
+            src="{{ t.image }}"
+            alt="Portret elev"
+          />
+          <div
+            class="testimonial-rating flex items-center gap-1.5 text-[#e0a135]"
+            aria-label="Evaluare {{ t.rating }} din 5"
+          >
+            {% for i in range(0, t.rating) %}
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2.5l2.94 5.95 6.56.95-4.75 4.63 1.12 6.53L12 17.77l-5.87 3.09 1.12-6.53L2.5 9.4l6.56-.95L12 2.5z"
+              />
+            </svg>
+            {% endfor %}
+          </div>
+        </div>
+        <p class="mb-[18px] text-ink-soft leading-relaxed">
+          {{ t.text }}
+        </p>
+        <div class="flex flex-col gap-0.5">
+          <span class="font-semibold">{{ t.name }}</span>
+          <span class="text-sm text-ink-soft">{{ t.role }}</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── Tarife ── #}
+<section
+  id="tarife"
+  class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div class="container">
+    <span
+      class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+      >Tarife</span
+    >
+    <h2
+      class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+    >
+      {{ tarife.heading }}
+    </h2>
+    <p
+      class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px] mb-7"
+    >
+      {{ tarife.description }}
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px]">
+      {% for plan in tarife.items %}
+      <article
+        class="price-card {{ 'bg-[#fffaf3] border border-[rgba(217,122,53,0.45)]' if plan.recommended else 'bg-white border border-line' }} rounded-xl sm:rounded-[18px] p-3.5 sm:p-5 md:p-[26px] shadow-card relative grid gap-3"
+      >
+        {% if plan.recommended %}
+        <div
+          class="absolute top-[18px] right-[18px] bg-[#fbe2cc] text-accent-dark py-1.5 px-2.5 rounded-full text-xs font-semibold uppercase tracking-wide"
+        >
+          Recomandat
+        </div>
+        {% endif %}
+        <h3 class="text-base sm:text-xl">{{ plan.title }}</h3>
+        <p
+          class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
+        >
+          {{ plan.price }}
+        </p>
+        <p class="text-ink-soft text-[13px] sm:text-[15px]">
+          {{ plan.subtitle }}
+        </p>
+        <ul class="pl-[18px] text-ink-soft leading-[1.7]">
+          {% for feat in plan.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+        <a class="{{ plan.ctaStyle }}" href="#contact">{{ plan.cta }}</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section
+  id="faq"
+  class="bg-[#fff9f2] border-t border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-7 lg:gap-10 items-start"
+  >
+    <div>
+      <span
+        class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+        >FAQ</span
+      >
+      <h2
+        class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+      >
+        {{ faq.heading }}
+      </h2>
+      <p
+        class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+      >
+        {{ faq.description }}
+      </p>
+    </div>
+    <div class="grid gap-3 md:gap-4">
+      {% for item in faq.items %}
+      <article
+        class="bg-white border border-line rounded-xl sm:rounded-2xl p-3.5 sm:px-[18px] sm:py-4 md:px-[22px] md:py-5 shadow-card"
+      >
+        <h3 class="mb-2 text-base md:text-lg">{{ item.question }}</h3>
+        <p class="text-ink-soft leading-relaxed">
+          {{ item.answer }}
+        </p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── Contact ── #}
+<section
+  id="contact"
+  class="bg-[#fff4e8] border-y border-line py-9 sm:py-12 md:py-[78px]"
+>
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9 items-start"
+  >
+    <div>
+      <span
+        class="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5"
+        >Contact</span
+      >
+      <h2
+        class="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5"
+      >
+        {{ contact.heading }}
+      </h2>
+      <p
+        class="text-ink-soft text-[15px] sm:text-base md:text-lg leading-relaxed max-w-[620px]"
+      >
+        {{ contact.description }}
+      </p>
+      <div class="grid gap-4 mt-6">
+        <div>
+          <p
+            class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+          >
+            Telefon / WhatsApp
+          </p>
+          <p class="text-base sm:text-lg text-ink-soft">
+            {{ contact.phone }}
+          </p>
+        </div>
+        <div>
+          <p
+            class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+          >
+            Email
+          </p>
+          <p class="text-base sm:text-lg text-ink-soft">
+            {{ contact.email }}
+          </p>
+        </div>
+        <div>
+          <p
+            class="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold"
+          >
+            Locatie
+          </p>
+          <p class="text-base sm:text-lg text-ink-soft">
+            {{ contact.location }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <form
+      class="bg-white border border-line rounded-[18px] p-6 shadow-card grid gap-3 md:gap-4"
+    >
+      <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
+        Nume si prenume
+        <input
+          class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
+          type="text"
+          name="name"
+          placeholder="Numele tau"
+        />
+      </label>
+      <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
+        Telefon
+        <input
+          class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
+          type="tel"
+          name="phone"
+          placeholder="Numar de telefon"
+        />
+      </label>
+      <label class="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
+        Mesaj
+        <textarea
+          class="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] resize-y"
+          name="message"
+          rows="5"
+          placeholder="Spune-mi ce obiectiv ai"
+        ></textarea>
+      </label>
+      <button class="cta border-0 cursor-pointer" type="submit">
+        Trimite mesaj
+      </button>
+    </form>
+  </div>
+</section>

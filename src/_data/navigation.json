@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "label": "Acasa",
+            "href": "#hero"
+        },
+        {
+            "label": "Despre",
+            "href": "#despre"
+        },
+        {
+            "label": "Servicii",
+            "href": "#servicii"
+        },
+        {
+            "label": "Pregatire examene",
+            "href": "#pregatire"
+        },
+        {
+            "label": "Dictie",
+            "href": "#dictie"
+        },
+        {
+            "label": "Contact",
+            "href": "#contact"
+        }
+    ],
+    "footerLinks": [
+        {
+            "label": "Despre",
+            "href": "#despre"
+        },
+        {
+            "label": "Servicii",
+            "href": "#servicii"
+        },
+        {
+            "label": "Tarife",
+            "href": "#tarife"
+        },
+        {
+            "label": "FAQ",
+            "href": "#faq"
+        }
+    ]
+}
