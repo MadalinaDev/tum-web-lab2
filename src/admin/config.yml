@@ -1,0 +1,218 @@
+backend:
+  name: github
+  repo: MadalinaDev/tum-web-lab2
+  branch: master
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  # Site Settings
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "General"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Site Name (full)", name: "siteNameFull", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Copyright", name: "copyright", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Info"
+        file: "src/_data/contact.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Description", name: "description", widget: "text" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Mascot Message", name: "mascotMessage", widget: "string" }
+
+      - name: "navigation"
+        label: "Navigation"
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Main Nav Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Footer Links"
+            name: "footerLinks"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+  # Hero Section
+  - name: "hero"
+    label: "Hero Section"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "src/_data/hero.json"
+        fields:
+          - { label: "Badge Text", name: "badge", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Primary CTA", name: "ctaPrimary", widget: "string" }
+          - { label: "Secondary CTA", name: "ctaSecondary", widget: "string" }
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            field: { label: "Highlight", name: "highlight", widget: "string" }
+          - label: "Info Card"
+            name: "card"
+            widget: "object"
+            fields:
+              - { label: "Format Title", name: "formatTitle", widget: "string" }
+              - label: "Formats"
+                name: "formats"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+              - { label: "Audience Title", name: "audienceTitle", widget: "string" }
+              - label: "Audiences"
+                name: "audiences"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+              - { label: "Card CTA", name: "cardCta", widget: "string" }
+
+  # About Section
+  - name: "despre"
+    label: "Despre (About)"
+    files:
+      - name: "despre"
+        label: "About Section"
+        file: "src/_data/despre.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Card Title", name: "cardTitle", widget: "string" }
+          - label: "Card Items"
+            name: "cardItems"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+  # Services Section
+  - name: "servicii"
+    label: "Servicii (Services)"
+    files:
+      - name: "servicii"
+        label: "Services"
+        file: "src/_data/servicii.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # Exam Prep Section
+  - name: "pregatire"
+    label: "Pregatire (Exam Prep)"
+    files:
+      - name: "pregatire"
+        label: "Exam Prep"
+        file: "src/_data/pregatire.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+
+  # Diction Section
+  - name: "dictie"
+    label: "Dictie (Diction)"
+    files:
+      - name: "dictie"
+        label: "Diction"
+        file: "src/_data/dictie.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # Testimonials Section
+  - name: "testimoniale"
+    label: "Testimoniale (Testimonials)"
+    files:
+      - name: "testimoniale"
+        label: "Testimonials"
+        file: "src/_data/testimoniale.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Photo URL", name: "image", widget: "string" }
+              - { label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+
+  # Pricing Section
+  - name: "tarife"
+    label: "Tarife (Pricing)"
+    files:
+      - name: "tarife"
+        label: "Pricing"
+        file: "src/_data/tarife.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Plans"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+              - { label: "CTA Text", name: "cta", widget: "string" }
+              - { label: "CTA Style", name: "ctaStyle", widget: "select", options: ["cta", "ghost"] }
+              - { label: "Recommended?", name: "recommended", widget: "boolean", default: false }
+
+  # FAQ Section
+  - name: "faq"
+    label: "FAQ"
+    files:
+      - name: "faq"
+        label: "FAQ"
+        file: "src/_data/faq.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
