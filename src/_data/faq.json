@@ -1,0 +1,22 @@
+{
+    "heading": "Intrebari frecvente",
+    "description": "Raspunsuri clare pentru cele mai comune intrebari despre sedinte, programari si pregatire.",
+    "items": [
+        {
+            "question": "Cat dureaza o sedinta?",
+            "answer": "O sedinta standard dureaza 60 de minute, cu pauze scurte daca este nevoie. Pentru pachete se poate ajusta durata."
+        },
+        {
+            "question": "Se poate face pregatire doar online?",
+            "answer": "Da. Lucram online prin Zoom sau Google Meet, cu materiale partajate si explicatii in timp real."
+        },
+        {
+            "question": "Ce materiale trebuie sa aduc?",
+            "answer": "Pentru inceput este suficient caietul si manualul. Eu ofer teste, modele de eseu si fise de lucru."
+        },
+        {
+            "question": "Cum se face programarea?",
+            "answer": "Programarea se face prin mesaj sau apel. Stabilim ziua, ora si formatul, apoi primesti confirmarea."
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "heading": "Pachete simple si transparente",
+    "description": "Alege formatul care ti se potriveste. Sedintele pot fi online sau offline in Nisporeni.",
+    "items": [
+        {
+            "title": "Sedinta individuala",
+            "price": "150 MDL",
+            "subtitle": "60 minute, online sau offline",
+            "features": [
+                "Analiza nivelului curent",
+                "Exercitii personalizate",
+                "Feedback imediat"
+            ],
+            "cta": "Rezerva",
+            "ctaStyle": "ghost",
+            "recommended": false
+        },
+        {
+            "title": "Pachet 4 sedinte",
+            "price": "520 MDL",
+            "subtitle": "4 x 60 minute, economisesti timp",
+            "features": [
+                "Plan de invatare saptamanal",
+                "Corectare eseu inclusa",
+                "Suport intre sedinte"
+            ],
+            "cta": "Rezerva pachet",
+            "ctaStyle": "cta",
+            "recommended": true
+        },
+        {
+            "title": "Pachet examen",
+            "price": "980 MDL",
+            "subtitle": "8 sedinte pentru examen",
+            "features": [
+                "Simulari cu barem",
+                "Eseuri model si rescrieri",
+                "Strategii de timp"
+            ],
+            "cta": "Rezerva",
+            "ctaStyle": "ghost",
+            "recommended": false
+        }
+    ]
+}

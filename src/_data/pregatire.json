@@ -1,0 +1,21 @@
+{
+    "heading": "Clasa a 9-a si Bacalaureat",
+    "items": [
+        {
+            "title": "Clasa a 9-a",
+            "description": "Recapitulare gramatica, texte literare, analiza si exercitii tip evaluare. Te ajut sa intelegi cerintele si sa raspunzi clar.",
+            "features": [
+                "Teste simulative si corectare pe loc",
+                "Scheme rapide pentru subiecte"
+            ]
+        },
+        {
+            "title": "Bacalaureat",
+            "description": "Plan complet pentru subiectele de Bac, cu accent pe eseu, argumentare si interpretare de text.",
+            "features": [
+                "Eseuri model si rescrieri ghidate",
+                "Metode rapide de invatare"
+            ]
+        }
+    ]
+}

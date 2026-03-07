@@ -1,0 +1,41 @@
+{
+    "badge": "Profesor de limba si literatura romana",
+    "heading": "Meditatii in Nisporeni, online si offline, pentru rezultate sigure la romana",
+    "description": "Pregatire clara si structurata pentru clasa a 9-a, Bac si lectii curente. Lucram pe texte, argumentare, gramatica si exprimare corecta, cu feedback personalizat dupa fiecare sedinta.",
+    "ctaPrimary": "Rezerva o sedinta",
+    "ctaSecondary": "Vezi serviciile",
+    "highlights": [
+        "Plan de lucru pe obiective si nivel",
+        "Corectare detaliata a eseurilor",
+        "Exercitii de dictie si expresivitate"
+    ],
+    "card": {
+        "formatTitle": "Format de lucru",
+        "formats": [
+            {
+                "label": "Online",
+                "value": "Zoom / Meet"
+            },
+            {
+                "label": "Offline",
+                "value": "Nisporeni"
+            }
+        ],
+        "audienceTitle": "Pentru cine",
+        "audiences": [
+            {
+                "label": "Clasa a 9-a",
+                "value": "Evaluare nationala"
+            },
+            {
+                "label": "Clasa a 12-a",
+                "value": "Bacalaureat"
+            },
+            {
+                "label": "Lectii",
+                "value": "Consolidare"
+            }
+        ],
+        "cardCta": "Solicita detalii"
+    }
+}
