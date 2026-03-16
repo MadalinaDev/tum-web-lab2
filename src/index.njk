@@ -295,6 +295,7 @@ layout: base.njk
     </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[22px]">
       {% for plan in tarife.items %}
+      {% if not plan.draft %}
       <article
         class="price-card {{ 'bg-[#fffaf3] border border-[rgba(217,122,53,0.45)]' if plan.recommended else 'bg-white border border-line' }} rounded-xl sm:rounded-[18px] p-3.5 sm:p-5 md:p-[26px] shadow-card relative grid gap-3"
       >
@@ -306,11 +307,25 @@ layout: base.njk
         </div>
         {% endif %}
         <h3 class="text-base sm:text-xl">{{ plan.title }}</h3>
-        <p
-          class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
-        >
-          {{ plan.price }}
-        </p>
+        <div class="flex items-baseline gap-2.5">
+          <p
+            class="font-display text-[22px] sm:text-[26px] md:text-[32px] text-accent-dark"
+          >
+            {{ plan.price }}
+          </p>
+          {% if plan.hasDiscount and plan.oldPrice %}
+          <p
+            class="font-display text-[15px] sm:text-[17px] md:text-[20px] text-ink-soft line-through opacity-60"
+          >
+            {{ plan.oldPrice }}
+          </p>
+          <span
+            class="inline-block bg-[#d3f5e0] text-[#1a7a3a] text-[11px] sm:text-xs font-semibold uppercase tracking-wide py-1 px-2 rounded-full"
+          >
+            Reducere
+          </span>
+          {% endif %}
+        </div>
         <p class="text-ink-soft text-[13px] sm:text-[15px]">
           {{ plan.subtitle }}
         </p>
@@ -321,6 +336,7 @@ layout: base.njk
         </ul>
         <a class="{{ plan.ctaStyle }}" href="#contact">{{ plan.cta }}</a>
       </article>
+      {% endif %}
       {% endfor %}
     </div>
   </div>

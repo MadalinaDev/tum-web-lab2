@@ -5,6 +5,8 @@
         {
             "title": "Sedinta individuala",
             "price": "150 MDL",
+            "oldPrice": "",
+            "hasDiscount": false,
             "subtitle": "60 minute, online sau offline",
             "features": [
                 "Analiza nivelului curent",
@@ -13,11 +15,14 @@
             ],
             "cta": "Rezerva",
             "ctaStyle": "ghost",
-            "recommended": false
+            "recommended": false,
+            "draft": false
         },
         {
             "title": "Pachet 4 sedinte",
             "price": "520 MDL",
+            "oldPrice": "600 MDL",
+            "hasDiscount": true,
             "subtitle": "4 x 60 minute, economisesti timp",
             "features": [
                 "Plan de invatare saptamanal",
@@ -26,11 +31,14 @@
             ],
             "cta": "Rezerva pachet",
             "ctaStyle": "cta",
-            "recommended": true
+            "recommended": true,
+            "draft": false
         },
         {
             "title": "Pachet examen",
             "price": "980 MDL",
+            "oldPrice": "",
+            "hasDiscount": false,
             "subtitle": "8 sedinte pentru examen",
             "features": [
                 "Simulari cu barem",
@@ -39,7 +47,8 @@
             ],
             "cta": "Rezerva",
             "ctaStyle": "ghost",
-            "recommended": false
+            "recommended": false,
+            "draft": false
         }
     ]
 }
