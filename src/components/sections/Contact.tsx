@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, FormEvent } from "react";
+
 interface ContactData {
   heading: string;
   description: string;
@@ -6,7 +10,42 @@ interface ContactData {
   location: string;
 }
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function Contact({ data }: { data: ContactData }) {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const name = (
+      form.elements.namedItem("name") as HTMLInputElement
+    ).value.trim();
+    const phone = (
+      form.elements.namedItem("phone") as HTMLInputElement
+    ).value.trim();
+    const message = (
+      form.elements.namedItem("message") as HTMLTextAreaElement
+    ).value.trim();
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message }),
+      });
+
+      if (!res.ok) throw new Error("send failed");
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -47,7 +86,10 @@ export default function Contact({ data }: { data: ContactData }) {
           </div>
         </div>
 
-        <form className="bg-white border border-line rounded-[18px] p-6 shadow-card grid gap-3 md:gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white border border-line rounded-[18px] p-6 shadow-card grid gap-3 md:gap-4"
+        >
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
             Nume si prenume
             <input
@@ -55,6 +97,7 @@ export default function Contact({ data }: { data: ContactData }) {
               type="text"
               name="name"
               placeholder="Numele tau"
+              required
             />
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
@@ -64,6 +107,7 @@ export default function Contact({ data }: { data: ContactData }) {
               type="tel"
               name="phone"
               placeholder="Numar de telefon"
+              required
             />
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
@@ -73,10 +117,28 @@ export default function Contact({ data }: { data: ContactData }) {
               name="message"
               rows={5}
               placeholder="Spune-mi ce obiectiv ai"
+              required
             />
           </label>
-          <button className="cta border-0 cursor-pointer" type="submit">
-            Trimite mesaj
+
+          {status === "success" && (
+            <p className="text-[#1a7a3a] bg-[#d3f5e0] rounded-xl px-4 py-3 text-sm font-semibold">
+              Mesaj trimis! Te voi contacta in curand.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-[#a4541c] bg-[#fbe2cc] rounded-xl px-4 py-3 text-sm font-semibold">
+              Eroare la trimitere. Incearca din nou sau scrie direct la{" "}
+              {data.phone}.
+            </p>
+          )}
+
+          <button
+            className="cta border-0 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+            type="submit"
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Se trimite…" : "Trimite mesaj"}
           </button>
         </form>
       </div>
