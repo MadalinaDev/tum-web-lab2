@@ -1,3 +1,23 @@
+# Dependencies
 node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Eleventy / old SSG
 _site/
 .cache/
+
+# Environment files
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# TypeScript build info
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
