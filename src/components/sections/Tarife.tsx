@@ -1,3 +1,5 @@
+"use client";
+
 interface PricePlan {
   title: string;
   price: string;
@@ -15,6 +17,13 @@ interface TarifeData {
   heading: string;
   description: string;
   items: PricePlan[];
+}
+
+function selectPackageAndScroll(title: string) {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("selectPackage", { detail: title }));
+  const el = document.getElementById("contact");
+  if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
 export default function Tarife({ data }: { data: TarifeData }) {
@@ -74,9 +83,13 @@ export default function Tarife({ data }: { data: TarifeData }) {
                   <li key={feat}>{feat}</li>
                 ))}
               </ul>
-              <a className={plan.ctaStyle} href="#contact">
+              <button
+                className={plan.ctaStyle}
+                type="button"
+                onClick={() => selectPackageAndScroll(plan.title)}
+              >
                 {plan.cta}
-              </a>
+              </button>
             </article>
           ))}
         </div>

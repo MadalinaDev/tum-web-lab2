@@ -42,9 +42,10 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { name, phone, message } = body as {
+  const { name, phone, packageType, message } = body as {
     name: string;
     phone: string;
+    packageType?: string;
     message: string;
   };
 
@@ -59,10 +60,13 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const safePackage = packageType?.trim().slice(0, 100) ?? "";
+
   const text =
     `📩 *Mesaj nou de contact*\n\n` +
     `👤 *Nume:* ${escapeMarkdown(safeName)}\n` +
     `📞 *Telefon:* ${escapeMarkdown(safePhone)}\n` +
+    (safePackage ? `📦 *Pachet:* ${escapeMarkdown(safePackage)}\n` : "") +
     `💬 *Mesaj:*\n${escapeMarkdown(safeMessage)}`;
 
   const telegramRes = await fetch(

@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
+import tarife from "@/_data/tarife.json";
+
+const PACKAGE_OPTIONS = [
+  ...tarife.items.filter((p) => !p.draft).map((p) => p.title),
+  "Alta optiune",
+];
 
 interface ContactData {
   heading: string;
@@ -14,6 +20,15 @@ type Status = "idle" | "loading" | "success" | "error";
 
 export default function Contact({ data }: { data: ContactData }) {
   const [status, setStatus] = useState<Status>("idle");
+  const [packageType, setPackageType] = useState("");
+
+  useEffect(() => {
+    function onSelect(e: Event) {
+      setPackageType((e as CustomEvent<string>).detail);
+    }
+    window.addEventListener("selectPackage", onSelect);
+    return () => window.removeEventListener("selectPackage", onSelect);
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,12 +49,13 @@ export default function Contact({ data }: { data: ContactData }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message }),
+        body: JSON.stringify({ name, phone, packageType, message }),
       });
 
       if (!res.ok) throw new Error("send failed");
 
       setStatus("success");
+      setPackageType("");
       form.reset();
     } catch {
       setStatus("error");
@@ -111,6 +127,22 @@ export default function Contact({ data }: { data: ContactData }) {
             />
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
+            Pachet de interes
+            <select
+              className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] appearance-none"
+              name="packageType"
+              value={packageType}
+              onChange={(e) => setPackageType(e.target.value)}
+            >
+              <option value="">Alege un pachet (optional)</option>
+              {PACKAGE_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
             Mesaj
             <textarea
               className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] resize-y"
@@ -123,7 +155,7 @@ export default function Contact({ data }: { data: ContactData }) {
 
           {status === "success" && (
             <p className="text-[#1a7a3a] bg-[#d3f5e0] rounded-xl px-4 py-3 text-sm font-semibold">
-              Mesaj trimis! Te voi contacta in curand.
+              Mesaj trimis! Va vom contacta in curand. Multumim!
             </p>
           )}
           {status === "error" && (
