@@ -5,6 +5,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   corePlugins: {
     preflight: false,
     container: false,
@@ -13,10 +14,10 @@ const config: Config = {
     screens: { sm: "480px", md: "768px", lg: "1024px" },
     extend: {
       colors: {
-        ink: { DEFAULT: "#111215", soft: "#2a2d33" },
-        paper: "#f6f1ea",
-        accent: { DEFAULT: "#d97a35", dark: "#a4541c" },
-        line: "#e5d7c8",
+        ink: { DEFAULT: "var(--ink)", soft: "var(--ink-soft)" },
+        paper: "var(--paper)",
+        accent: { DEFAULT: "var(--accent)", dark: "var(--accent-dark)" },
+        line: "var(--line)",
       },
       fontFamily: {
         display: ['"Playfair Display"', "Georgia", "serif"],
