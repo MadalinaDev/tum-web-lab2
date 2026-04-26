@@ -1,3 +1,7 @@
+"use client";
+
+import ThemeToggle from "@/components/ThemeToggle";
+
 interface NavItem {
   label: string;
   href: string;
@@ -44,8 +48,9 @@ export default function Footer({ site, navigation, contact }: Props) {
           </p>
         </div>
       </div>
-      <div className="text-center py-4 pb-6 text-[rgba(245,239,230,0.5)] text-sm">
+      <div className="container flex flex-col sm:flex-row items-center justify-between gap-3 py-4 pb-6 text-[rgba(245,239,230,0.5)] text-sm">
         <p>{site.copyright}</p>
+        <ThemeToggle />
       </div>
     </footer>
   );

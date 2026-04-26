@@ -32,10 +32,10 @@ export default function Hero({ data }: { data: HeroData }) {
             {data.description}
           </p>
           <div className="flex flex-col gap-3 mt-5 mb-3.5 md:flex-row md:items-center md:gap-4 md:mt-[26px] md:mb-[18px]">
-            <a className="cta w-full text-center md:w-auto" href="#contact">
+            <a className="cta text-center md:w-auto" href="#contact">
               {data.ctaPrimary}
             </a>
-            <a className="ghost w-full text-center md:w-auto" href="#servicii">
+            <a className="ghost text-center md:w-auto" href="#servicii">
               {data.ctaSecondary}
             </a>
           </div>
@@ -58,13 +58,13 @@ export default function Hero({ data }: { data: HeroData }) {
           {data.card.formats.map((fmt) => (
             <div
               key={fmt.label}
-              className="hero-card-row flex justify-between items-center py-2 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
+              className="hero-card-row flex justify-between items-center py-2 mb-4 sm:py-2.5 border-b border-dashed border-line text-sm sm:text-[15px] text-ink-soft"
             >
               <span>{fmt.label}</span>
               <span>{fmt.value}</span>
             </div>
           ))}
-          <div className="h-px bg-line my-[18px]" />
+          {/* <div className="h-px bg-line my-[18px]" /> */}
           <p className="font-display text-base sm:text-lg mb-3.5">
             {data.card.audienceTitle}
           </p>

@@ -54,6 +54,21 @@ export default function Contact({ data }: { data: ContactData }) {
 
       if (!res.ok) throw new Error("send failed");
 
+      const confetti = (await import("canvas-confetti")).default;
+      confetti({
+        particleCount: 130,
+        spread: 75,
+        origin: { y: 0.65 },
+        colors: [
+          "#d97a35",
+          "#f0c59b",
+          "#a4541c",
+          "#fff1e4",
+          "#fbe2cc",
+          "#f5efe6",
+        ],
+      });
+
       setStatus("success");
       setPackageType("");
       form.reset();
