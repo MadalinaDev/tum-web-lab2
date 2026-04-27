@@ -406,6 +406,60 @@ html.dark {
   }
 }
 
+html[lang="ru"] {
+  font-size: 15px;
+}
+html[lang="ru"] #hero h1 {
+  font-size: clamp(19px, 4.5vw, 37px);
+}
+html[lang="ru"] h2 {
+  font-size: clamp(16px, 3.2vw, 29px);
+}
+html[lang="ru"] .hero-badge,
+html[lang="ru"] .site-nav a {
+  white-space: nowrap;
+}
+
+/* ── Language toggle ── */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink-soft);
+  transition: border-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lang-toggle:hover {
+  border-color: var(--accent);
+}
+.lang-toggle__active {
+  color: var(--accent-dark);
+}
+.lang-toggle__inactive {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+.lang-toggle__sep {
+  color: var(--line);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    order: 2;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
 /* ── Scroll-reveal animations ── */
 section.will-animate {
   opacity: 0;

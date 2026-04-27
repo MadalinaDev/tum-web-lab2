@@ -1,17 +1,11 @@
-interface Testimonial {
-  name: string;
-  role: string;
-  text: string;
-  image: string;
-  rating: number;
-}
+"use client";
 
-interface TestimonialeData {
-  heading: string;
-  items: Testimonial[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
-export default function Testimoniale({ data }: { data: TestimonialeData }) {
+export default function Testimoniale() {
+  const { t } = useLanguage();
+  const data = t.testimoniale;
+
   return (
     <section
       id="testimoniale"
@@ -19,7 +13,7 @@ export default function Testimoniale({ data }: { data: TestimonialeData }) {
     >
       <div className="container">
         <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-          Testimoniale
+          {data.sectionLabel}
         </span>
         <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
           {data.heading}

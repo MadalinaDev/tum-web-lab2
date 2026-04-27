@@ -1,20 +1,11 @@
-interface HeroData {
-  badge: string;
-  heading: string;
-  description: string;
-  ctaPrimary: string;
-  ctaSecondary: string;
-  highlights: string[];
-  card: {
-    formatTitle: string;
-    formats: { label: string; value: string }[];
-    audienceTitle: string;
-    audiences: { label: string; value: string }[];
-    cardCta: string;
-  };
-}
+"use client";
 
-export default function Hero({ data }: { data: HeroData }) {
+import { useLanguage } from "@/context/LanguageContext";
+
+export default function Hero() {
+  const { t } = useLanguage();
+  const data = t.hero;
+
   return (
     <section
       id="hero"
@@ -64,7 +55,6 @@ export default function Hero({ data }: { data: HeroData }) {
               <span>{fmt.value}</span>
             </div>
           ))}
-          {/* <div className="h-px bg-line my-[18px]" /> */}
           <p className="font-display text-base sm:text-lg mb-3.5">
             {data.card.audienceTitle}
           </p>

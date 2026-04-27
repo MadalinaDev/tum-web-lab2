@@ -1,11 +1,11 @@
-interface DespreData {
-  heading: string;
-  description: string;
-  cardTitle: string;
-  cardItems: string[];
-}
+"use client";
 
-export default function Despre({ data }: { data: DespreData }) {
+import { useLanguage } from "@/context/LanguageContext";
+
+export default function Despre() {
+  const { t } = useLanguage();
+  const data = t.despre;
+
   return (
     <section
       id="despre"
@@ -14,7 +14,7 @@ export default function Despre({ data }: { data: DespreData }) {
       <div className="container grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
         <div>
           <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-            Despre
+            {data.sectionLabel}
           </span>
           <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
             {data.heading}

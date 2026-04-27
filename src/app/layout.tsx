@@ -5,13 +5,12 @@ import Footer from "@/components/Footer";
 import Mascot from "@/components/Mascot";
 import ThemeProvider from "@/components/ThemeProvider";
 import ScrollReveal from "@/components/ScrollReveal";
-import site from "@/_data/site.json";
-import contact from "@/_data/contact.json";
-import navigation from "@/_data/navigation.json";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
-  title: site.title,
-  description: site.description,
+  title: "Meditații la română",
+  description:
+    "Pregătire pentru clasa a 9-a, Bacalaureat și lecții curente. Online și offline în Nisporeni.",
 };
 
 export default function RootLayout({
@@ -26,11 +25,13 @@ export default function RootLayout({
       </head>
       <body className="font-body text-ink min-h-screen bg-[radial-gradient(circle_at_top_left,_#fdf7ef_0%,_#f6f1ea_60%)]">
         <ThemeProvider>
-          <ScrollReveal />
-          <Header navigation={navigation} site={site} />
-          <main>{children}</main>
-          <Mascot message={contact.mascotMessage} />
-          <Footer site={site} navigation={navigation} contact={contact} />
+          <LanguageProvider>
+            <ScrollReveal />
+            <Header />
+            <main>{children}</main>
+            <Mascot />
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

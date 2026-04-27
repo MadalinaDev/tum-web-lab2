@@ -1,15 +1,11 @@
-interface PregatireItem {
-  title: string;
-  description: string;
-  features: string[];
-}
+"use client";
 
-interface PregatireData {
-  heading: string;
-  items: PregatireItem[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
-export default function Pregatire({ data }: { data: PregatireData }) {
+export default function Pregatire() {
+  const { t } = useLanguage();
+  const data = t.pregatire;
+
   return (
     <section
       id="pregatire"
@@ -17,7 +13,7 @@ export default function Pregatire({ data }: { data: PregatireData }) {
     >
       <div className="container">
         <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-          Pregatire examene
+          {data.sectionLabel}
         </span>
         <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
           {data.heading}

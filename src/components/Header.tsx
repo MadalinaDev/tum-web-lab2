@@ -2,19 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
-interface NavItem {
-  label: string;
-  href: string;
-}
-
-interface Props {
-  navigation: { items: NavItem[]; footerLinks: NavItem[] };
-  site: { siteName: string; siteNameFull: string };
-}
-
-export default function Header({ navigation, site }: Props) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 z-10 bg-[rgba(246,241,234,0.92)] backdrop-blur-[10px] border-b border-line">
@@ -33,7 +26,7 @@ export default function Header({ navigation, site }: Props) {
             />
           </span>
           <span className="hidden sm:inline font-display font-semibold leading-tight text-sm md:text-lg">
-            {site.siteNameFull}
+            {t.site.siteNameFull}
           </span>
         </a>
 
@@ -64,7 +57,7 @@ export default function Header({ navigation, site }: Props) {
           className={`site-nav${menuOpen ? " open" : ""}`}
           aria-label="Navigatie principala"
         >
-          {navigation.items.map((item) => (
+          {t.navigation.items.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -75,8 +68,10 @@ export default function Header({ navigation, site }: Props) {
           ))}
         </nav>
 
+        <LanguageToggle />
+
         <a className="cta" href="#contact">
-          Programeaza o sedinta
+          {t.hero.ctaPrimary}
         </a>
       </div>
     </header>
