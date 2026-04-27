@@ -1,19 +1,16 @@
-interface ServiceItem {
-  title: string;
-  description: string;
-}
+"use client";
 
-interface ServiciiData {
-  heading: string;
-  items: ServiceItem[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
-export default function Servicii({ data }: { data: ServiciiData }) {
+export default function Servicii() {
+  const { t } = useLanguage();
+  const data = t.servicii;
+
   return (
     <section id="servicii" className="py-9 sm:py-12 md:py-[78px]">
       <div className="container">
         <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-          Servicii
+          {data.sectionLabel}
         </span>
         <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-6">
           {data.heading}

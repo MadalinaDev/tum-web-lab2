@@ -1,19 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
-interface FaqItem {
-  question: string;
-  answer: string;
-}
-
-interface FaqData {
-  heading: string;
-  description: string;
-  items: FaqItem[];
-}
-
-export default function Faq({ data }: { data: FaqData }) {
+export default function Faq() {
+  const { t } = useLanguage();
+  const data = t.faq;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -24,7 +16,7 @@ export default function Faq({ data }: { data: FaqData }) {
       <div className="container grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-7 lg:gap-10 items-start">
         <div>
           <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-            FAQ
+            {data.sectionLabel}
           </span>
           <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
             {data.heading}

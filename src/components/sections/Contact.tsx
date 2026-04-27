@@ -1,24 +1,20 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-import tarife from "@/_data/tarife.json";
-
-const PACKAGE_OPTIONS = [
-  ...tarife.items.filter((p) => !p.draft).map((p) => p.title),
-  "Alta optiune",
-];
-
-interface ContactData {
-  heading: string;
-  description: string;
-  phone: string;
-  email: string;
-  location: string;
-}
+import { useLanguage } from "@/context/LanguageContext";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function Contact({ data }: { data: ContactData }) {
+export default function Contact() {
+  const { t } = useLanguage();
+  const data = t.contact;
+  const form_t = data.form;
+
+  const packageOptions = [
+    ...t.tarife.items.filter((p) => !p.draft).map((p) => p.title),
+    form_t.packageOther,
+  ];
+
   const [status, setStatus] = useState<Status>("idle");
   const [packageType, setPackageType] = useState("");
 
@@ -85,7 +81,7 @@ export default function Contact({ data }: { data: ContactData }) {
       <div className="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9 items-start">
         <div>
           <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-            Contact
+            {data.sectionLabel}
           </span>
           <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
             {data.heading}
@@ -96,19 +92,19 @@ export default function Contact({ data }: { data: ContactData }) {
           <div className="grid gap-4 mt-6">
             <div>
               <p className="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold">
-                Telefon / WhatsApp
+                {data.phoneLabel}
               </p>
               <p className="text-base sm:text-lg text-ink-soft">{data.phone}</p>
             </div>
             <div>
               <p className="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold">
-                Email
+                {data.emailLabel}
               </p>
               <p className="text-base sm:text-lg text-ink-soft">{data.email}</p>
             </div>
             <div>
               <p className="mb-1.5 text-xs sm:text-[13px] uppercase tracking-wide text-accent-dark font-semibold">
-                Locatie
+                {data.locationLabel}
               </p>
               <p className="text-base sm:text-lg text-ink-soft">
                 {data.location}
@@ -122,35 +118,35 @@ export default function Contact({ data }: { data: ContactData }) {
           className="bg-white border border-line rounded-[18px] p-6 shadow-card grid gap-3 md:gap-4"
         >
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
-            Nume si prenume
+            {form_t.nameLabel}
             <input
               className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
               type="text"
               name="name"
-              placeholder="Numele tau"
+              placeholder={form_t.namePlaceholder}
               required
             />
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
-            Telefon
+            {form_t.phoneLabel}
             <input
               className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4]"
               type="tel"
               name="phone"
-              placeholder="Numar de telefon"
+              placeholder={form_t.phonePlaceholder}
               required
             />
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
-            Pachet de interes
+            {form_t.packageLabel}
             <select
               className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] appearance-none"
               name="packageType"
               value={packageType}
               onChange={(e) => setPackageType(e.target.value)}
             >
-              <option value="">Alege un pachet (optional)</option>
-              {PACKAGE_OPTIONS.map((opt) => (
+              <option value="">{form_t.packagePlaceholder}</option>
+              {packageOptions.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
                 </option>
@@ -158,25 +154,24 @@ export default function Contact({ data }: { data: ContactData }) {
             </select>
           </label>
           <label className="grid gap-2 text-[13px] sm:text-sm text-ink-soft">
-            Mesaj
+            {form_t.messageLabel}
             <textarea
               className="border border-line rounded-xl py-[10px] px-3 sm:py-3 sm:px-3.5 font-[inherit] text-sm sm:text-[15px] bg-[#fffaf4] resize-y"
               name="message"
               rows={5}
-              placeholder="Spune-mi ce obiectiv ai"
+              placeholder={form_t.messagePlaceholder}
               required
             />
           </label>
 
           {status === "success" && (
             <p className="text-[#1a7a3a] bg-[#d3f5e0] rounded-xl px-4 py-3 text-sm font-semibold">
-              Mesaj trimis! Va vom contacta in curand. Multumim!
+              {form_t.success}
             </p>
           )}
           {status === "error" && (
             <p className="text-[#a4541c] bg-[#fbe2cc] rounded-xl px-4 py-3 text-sm font-semibold">
-              Eroare la trimitere. Incearca din nou sau scrie direct la{" "}
-              {data.phone}.
+              {form_t.error.replace("{phone}", data.phone)}
             </p>
           )}
 
@@ -185,7 +180,7 @@ export default function Contact({ data }: { data: ContactData }) {
             type="submit"
             disabled={status === "loading"}
           >
-            {status === "loading" ? "Se trimite…" : "Trimite mesaj"}
+            {status === "loading" ? form_t.submitting : form_t.submit}
           </button>
         </form>
       </div>

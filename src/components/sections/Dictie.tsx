@@ -1,22 +1,17 @@
-interface DictieStep {
-  number: string;
-  title: string;
-  description: string;
-}
+"use client";
 
-interface DictieData {
-  heading: string;
-  description: string;
-  steps: DictieStep[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
-export default function Dictie({ data }: { data: DictieData }) {
+export default function Dictie() {
+  const { t } = useLanguage();
+  const data = t.dictie;
+
   return (
     <section id="dictie" className="py-9 sm:py-12 md:py-[78px]">
       <div className="container grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-7 lg:gap-9">
         <div>
           <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-            Dictie
+            {data.sectionLabel}
           </span>
           <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
             {data.heading}

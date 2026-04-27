@@ -1,23 +1,6 @@
 "use client";
 
-interface PricePlan {
-  title: string;
-  price: string;
-  oldPrice: string;
-  hasDiscount: boolean;
-  subtitle: string;
-  features: string[];
-  cta: string;
-  ctaStyle: string;
-  recommended: boolean;
-  draft: boolean;
-}
-
-interface TarifeData {
-  heading: string;
-  description: string;
-  items: PricePlan[];
-}
+import { useLanguage } from "@/context/LanguageContext";
 
 function selectPackageAndScroll(title: string) {
   if (typeof window === "undefined") return;
@@ -26,7 +9,9 @@ function selectPackageAndScroll(title: string) {
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
-export default function Tarife({ data }: { data: TarifeData }) {
+export default function Tarife() {
+  const { t } = useLanguage();
+  const data = t.tarife;
   const published = data.items.filter((plan) => !plan.draft);
 
   return (
@@ -36,7 +21,7 @@ export default function Tarife({ data }: { data: TarifeData }) {
     >
       <div className="container">
         <span className="inline-block font-semibold tracking-wide uppercase text-[11px] sm:text-[13px] text-accent-dark mb-2 sm:mb-2.5">
-          Tarife
+          {data.sectionLabel}
         </span>
         <h2 className="font-display text-xl sm:text-[26px] md:text-[34px] mb-3 sm:mb-3.5">
           {data.heading}
@@ -56,7 +41,7 @@ export default function Tarife({ data }: { data: TarifeData }) {
             >
               {plan.recommended && (
                 <div className="absolute top-[18px] right-[18px] bg-[#fbe2cc] text-accent-dark py-1.5 px-2.5 rounded-full text-xs font-semibold uppercase tracking-wide">
-                  Recomandat
+                  {data.recommended}
                 </div>
               )}
               <h3 className="text-base sm:text-xl">{plan.title}</h3>
@@ -70,7 +55,7 @@ export default function Tarife({ data }: { data: TarifeData }) {
                       {plan.oldPrice}
                     </p>
                     <span className="inline-block bg-[#d3f5e0] text-[#1a7a3a] text-[11px] sm:text-xs font-semibold uppercase tracking-wide py-1 px-2 rounded-full">
-                      Reducere
+                      {data.discount}
                     </span>
                   </>
                 )}
